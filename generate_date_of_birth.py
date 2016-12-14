@@ -62,8 +62,7 @@ def equal_control_sum(pesel):
 
 
 def reading_file():
-    read_line = []
-    path = r'C:\python' + os.sep
+    path = r'C:\git_szkolenie' + os.sep
     file_name = 'nr_pesel.txt'
 
     read_file = open(path + file_name)
@@ -75,7 +74,7 @@ def reading_file():
 
 
 def writing_file(date_of_births, valid_pesels):
-    path = r'C:\python' + os.sep
+    path = r'C:\git_szkolenie' + os.sep
     write_file_name = 'pesel and date.txt'
     write_file = open(path + write_file_name, 'w')
     for i in range(len(date_of_births)):
@@ -84,17 +83,17 @@ def writing_file(date_of_births, valid_pesels):
     write_file.close()
 
 
-read_line = reading_file()
+read_lines = reading_file()
 date_of_births = []
 pesels = []
 valid_pesels = []
 
-pesels = [i for i in read_line]
+pesels = [i for i in read_lines]
 for pesel_nr in range(len(pesels)):
     pesel = [i for i in pesels[pesel_nr]]
     if equal_control_sum(pesel):
         date_of_births.append(date_of_birth(pesel).create_date_of_birth())
-writing_file(date_of_births, valid_pesels)
         valid_pesels.append(''.join(str(i) for i in pesel))
+        writing_file(date_of_births, valid_pesels)
     else:
-        print 'Błędny nr pesel %s w linii %d ' % (''.join(str(i) for i in pesel), pesel_nr + 1)
+        print 'Błędny nr pesel %s w linii %d' % (''.join(str(i) for i in pesel), pesel_nr + 1)
