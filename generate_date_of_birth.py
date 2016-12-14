@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import os
-
 class date_of_birth(object):
     def __init__(self, pesel):
         self.pesel = pesel
@@ -62,10 +60,9 @@ def equal_control_sum(pesel):
 
 
 def reading_file():
-    path = r'C:\git_szkolenie' + os.sep
     file_name = 'nr_pesel.txt'
 
-    read_file = open(path + file_name)
+    read_file = open(file_name)
     read_line = read_file.read().splitlines()
 
     return read_line
@@ -74,9 +71,8 @@ def reading_file():
 
 
 def writing_file(date_of_births, valid_pesels):
-    path = r'C:\git_szkolenie' + os.sep
     write_file_name = 'pesel and date.txt'
-    write_file = open(path + write_file_name, 'w')
+    write_file = open(write_file_name, 'w')
     for i in range(len(date_of_births)):
         write_file.write(valid_pesels[i] + ' ' + date_of_births[i] + '\n')
 
