@@ -72,7 +72,7 @@ def choice2():
     if len(user_NIP) == 10:
         NIP(user_NIP).equal_control_sum()
     else:
-        print 'Podałeś za krótki ciąg liczb'
+        print 'Podałeś za krótki ciąg liczb '
 
 
 choice = what_to_do()

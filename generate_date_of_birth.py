@@ -94,8 +94,7 @@ for pesel_nr in range(len(pesels)):
     pesel = [i for i in pesels[pesel_nr]]
     if equal_control_sum(pesel):
         date_of_births.append(date_of_birth(pesel).create_date_of_birth())
+writing_file(date_of_births, valid_pesels)
         valid_pesels.append(''.join(str(i) for i in pesel))
     else:
-        print 'Błędny nr pesel %s w linii %d' % (''.join(str(i) for i in pesel), pesel_nr + 1)
-
-writing_file(date_of_births, valid_pesels)
+        print 'Błędny nr pesel %s w linii %d ' % (''.join(str(i) for i in pesel), pesel_nr + 1)

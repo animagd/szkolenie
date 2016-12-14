@@ -77,4 +77,4 @@ while end != 1:
         PESEL(user_date).to_string()
         end = 1
     else:
-        print 'Wpisano błędne znaki i/lub podano datę w formacie innym niż DD-MM-RRRR'
+        print 'Wpisano błędne znaki i/lub podano datę w formacie innym niż DD-MM-RRRR '
